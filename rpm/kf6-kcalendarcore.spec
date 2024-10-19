@@ -21,6 +21,9 @@ BuildRequires: qt6-qtdeclarative-devel
 
 BuildRequires: pkgconfig(libical)
 
+Requires(post): /sbin/ldconfig
+Requires(postun): /sbin/ldconfig
+
 %description
 %{summary}.
 
@@ -46,6 +49,9 @@ Developer Documentation files for %{name} for use with KDevelop or QtCreator.
 
 %install
 %cmake_install
+
+%post -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %license LICENSES/*.txt
