@@ -46,11 +46,9 @@ Developer Documentation files for %{name} for use with KDevelop or QtCreator.
 
 %install
 %cmake_install
-%find_lang_kf6 kcalendarcore6_qt
 
-%files -f kcalendarcore6_qt.lang
+%files
 %license LICENSES/*.txt
-%{_kf6_qmldir}/org/kde/calendarcore/
 %{_kf6_datadir}/qlogging-categories6/*categories
 %{_kf6_libdir}/libKF6CalendarCore.so.*
 
