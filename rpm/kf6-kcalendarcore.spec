@@ -57,6 +57,7 @@ Developer Documentation files for %{name} for use with KDevelop or QtCreator.
 %license LICENSES/*.txt
 %{_kf6_datadir}/qlogging-categories6/*categories
 %{_kf6_libdir}/libKF6CalendarCore.so.*
+%{_kf6_qmldir}/org/kde/calendarcore/
 
 %files devel
 %{_kf6_includedir}/KCalendarCore/
