@@ -48,7 +48,8 @@ Developer Documentation files for %{name} for use with KDevelop or QtCreator.
 %cmake_build
 
 %install
-%cmake_install
+# FIXME: OBS permission bug, ignore failures for now.
+%cmake_install ||:
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -65,6 +66,11 @@ Developer Documentation files for %{name} for use with KDevelop or QtCreator.
 %{_kf6_libdir}/libKF6CalendarCore.so
 %{_qt6_docdir}/*.tags
 %{_libdir}/pkgconfig/KF6CalendarCore.pc
+# work around the OBS permission bug:
+%ifarch aarch64
+%exclude %{_kf6_qmldir}/org/kde/calendarcore/%{name}qml.qmltypes
+%endif
+
 
 %files doc
 %{_qt6_docdir}/*.qch
